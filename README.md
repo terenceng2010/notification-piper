@@ -4,20 +4,20 @@ Forwards Windows toast notifications to your Android phone using [ntfy](https://
 
 ## Setup
 
-1. **Windows**
+1. **Windows** (requires [uv](https://docs.astral.sh/uv/))
    ```powershell
-   py -3.13 -m venv .venv
-   .\.venv\Scripts\python -m pip install -r requirements.txt
-   .\.venv\Scripts\python notification_piper.py --show-topic   # creates config.json
+   uv sync
+   uv run notification_piper.py --show-topic   # creates config.json
    ```
    If access is denied: Settings > Privacy & security > Notifications > allow apps to access notifications.
 
 2. **Android**: install **ntfy** (Play Store / F-Droid), tap **+**, and subscribe to the topic shown above.
    In the app's settings, turn on "instant delivery" if notifications arrive late.
 
-3. Check it: `.\.venv\Scripts\python notification_piper.py --test`
+3. Check it: `uv run notification_piper.py --test`
 
 4. Run it at logon: `powershell -ExecutionPolicy Bypass -File install_startup.ps1`
+   (uses the `.venv` created by `uv sync`)
 
 ## config.json
 
