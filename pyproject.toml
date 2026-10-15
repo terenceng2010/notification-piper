@@ -11,4 +11,6 @@ dependencies = [
     "winrt-Windows.ApplicationModel",
     "winrt-Windows.UI.Notifications",
     "winrt-Windows.UI.Notifications.Management",
+    "pystray>=0.19.5",
+    "pillow>=12.3.0",
 ]

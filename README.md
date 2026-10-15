@@ -19,6 +19,15 @@ Forwards Windows toast notifications to your Android phone using [ntfy](https://
 4. Run it at logon: `powershell -ExecutionPolicy Bypass -File install_startup.ps1`
    (uses the `.venv` created by `uv sync`)
 
+## Tray icon
+
+While running, a tray icon shows the status: green = forwarding, grey = paused, orange = offline
+(messages queued for retry), red = error (see the log). Hover for the count sent this session.
+Right-click for **Pause** (also on double-click), **Send test**, **Open config**, **Open log** and **Quit**.
+Notifications that arrive while paused are dropped, not sent on resume.
+
+Use `--no-tray` to run headless. Only one instance runs at a time.
+
 ## config.json
 
 | key | meaning |
